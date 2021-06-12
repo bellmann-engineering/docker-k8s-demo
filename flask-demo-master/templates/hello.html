@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="refresh" content="2">
+  </head>
+
+<body>
+
+<br>
+<br>
+
+<div style="background-color:light-grey,text-color:red,padding:20px" align="center">
+<table>
+
+{% if version %}
+    <tr>
+        <th align="left">Flask-demo version </th> <td>{{ version }}</td>
+    </tr>
+{% else %}
+    <tr>
+        <td colspan="2">Unknown version </td>
+    </tr>
+{% endif %}
+
+{% if hostname %}
+    <tr>
+        <th align="left">This is container </th> <td>{{ hostname }}</td>
+    </tr>
+{% endif %}
+
+{% if time %}
+    <tr>
+        <th align="left">The time is </th> <td>{{ time }}</td>
+    </tr>
+{% else %}
+    <tr>
+        <td colspan="2"> I don't know what the time is </td>>
+    </tr>
+{% endif %}
+
+{% if name %}
+    <tr>
+        <th align="left">My name is </th> <td>{{ name }}</td>
+    </tr>
+{% else %}
+    <tr>
+        <th align="left">My name is </th><td> Flask-demo </td>
+    </tr>
+{% endif %}
+
+{% if message %}
+    <tr>
+        <th align="left">Message :</th> <td>{{ message }}</td>
+    </tr>
+{% else %}
+    <tr>
+        <th align="left">Message :</th><td> Hello, world !</td>
+    </tr>
+{% endif %}
+</table>
+</div>
+</body>
+</html>
