@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tinyweb-deployment
+  labels:
+    app: tinyweb
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: tinyweb
+  template:
+    metadata:
+      labels:
+        app: tinyweb
+    spec:
+      containers:
+      - name: tinyweb
+        image: kbellmann/tinyweb:0.9
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
