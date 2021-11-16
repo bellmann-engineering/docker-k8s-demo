@@ -1,0 +1,13 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: webpage-ingress
+spec:
+  rules:
+    - host: tinyweb.com
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: webpage-service
+              servicePort: 80
