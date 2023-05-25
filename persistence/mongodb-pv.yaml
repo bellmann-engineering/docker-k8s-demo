@@ -9,4 +9,4 @@ spec:
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: /data/mongodb
+    path: /data/mongodb # TODO: Anpassen auf lokalen Pfad der Wahl
