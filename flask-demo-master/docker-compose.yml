@@ -1,0 +1,10 @@
+version: '3'
+services:
+    web:
+        image: kbellmann/tinyweb:1.2
+        ports:
+          - "5000:5000"
+        container_name: webapp
+        environment:
+          - USER='Kai'
+    
