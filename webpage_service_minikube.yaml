@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: webpage-service
+  labels:
+    app: webpage-service
+spec:
+  type: LoadBalancer
+  ports:
+  - name: http
+    port: 8080
+    protocol: TCP
+    targetPort: 5000
+  selector:
+    app: tinyweb
+  sessionAffinity: None
