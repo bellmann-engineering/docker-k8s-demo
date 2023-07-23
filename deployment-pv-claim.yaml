@@ -1,0 +1,11 @@
+kind: Deployment
+metadata:
+  name: tinyweb-deployment
+spec:
+...
+template:
+...
+      volumes:
+      - name: tinyweb-data
+        persistentVolumeClaim:
+          claimName: my-pv-claim
