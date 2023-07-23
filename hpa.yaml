@@ -1,28 +1,14 @@
-# Please edit the object below. Lines beginning with a '#' will be ignored,
-# and an empty file will abort the edit. If an error occurs while saving this file will be
-# reopened with the relevant failures.
-#
 apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
-  annotations:
-    autoscaling.alpha.kubernetes.io/conditions: '[{"type":"AbleToScale","status":"True","lastTransitionTime":"2021-06-13T11:58:01Z","reason":"SucceededGetScale","message":"the
-      HPA controller was able to get the target''s current scale"},{"type":"ScalingActive","status":"False","lastTransitionTime":"2021-06-13T11:58:01Z","reason":"FailedGetResourceMetric","message":"the
-      HPA was unable to compute the replica count: missing request for cpu"}]'
-  creationTimestamp: "2021-06-13T11:57:45Z"
-  name: tinyweb-deployment
-  namespace: default
-  resourceVersion: "474566"
-  selfLink: /apis/autoscaling/v1/namespaces/default/horizontalpodautoscalers/tinyweb-deployment
-  uid: 95bfb3d5-af4d-45c8-a441-7d1a73236c7e
+  name: tinyweb-hpa
+  labels:
+    app: tinyweb
 spec:
-  maxReplicas: 20
-  minReplicas: 3
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
     name: tinyweb-deployment
+  minReplicas: 2
+  maxReplicas: 20
   targetCPUUtilizationPercentage: 50
-status:
-  currentReplicas: 20
-  desiredReplicas: 0
