@@ -8,4 +8,4 @@ template:
       volumes:
       - name: tinyweb-data
         persistentVolumeClaim:
-          claimName: my-pv-claim
+          claimName: pvc-example
