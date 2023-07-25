@@ -1,0 +1,8 @@
+  template:
+    ..
+    spec:
+      ...
+        resources:
+          requests:
+            cpu: "100m"  # Adjust this value based on your application's resource requirements
+            memory: "128Mi"  # Adjust this value based on your application's resource requirements
