@@ -5,6 +5,16 @@ Stelle sicher, dass Minikube gestartet ist. Wenn nicht, führe den folgenden Bef
 ```bash
 minikube start --driver=docker --mount=true
 ```
+Sollte es zu einem Fehler beim Start kommen, so löscht man am besten das minikube Profil einmal vollständig:
+
+```bash
+minikube stop
+minikube delete
+```
+danach
+```bash
+minikube start --driver=docker --mount=true
+```
 
 ### 2. Persistent Volume (PV) und Persistent Volume Claim (PVC) erstellen:
 
@@ -94,10 +104,10 @@ spec:
         volumeMounts:
         - name: tinyweb-storage
           mountPath: "/tmp"
-  volumes:
-  - name: tinyweb-storage
-    persistentVolumeClaim:
-      claimName: my-pvc
+      volumes:
+      - name: tinyweb-storage
+        persistentVolumeClaim:
+          claimName: my-pvc
 ```
 
 Führe die aktualisierten Konfigurationen aus:
