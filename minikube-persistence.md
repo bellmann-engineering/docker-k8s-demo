@@ -27,6 +27,8 @@ spec:
     path: "/mnt/data"
 ```
 
+Die Konfiguration path: "/mnt/data" im Persistent Volume (PV) bezieht sich auf den Dateipfad auf der Host-Maschine, auf der der Minikube-Cluster läuft. 
+
 **pvc.yaml:**
 
 ```yaml
